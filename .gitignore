@@ -1,0 +1,19 @@
+# Virtual Enviroments
+.venv/
+
+#Python cache
+__pycache__/
+*.pyc 
+*.pyo 
+*.pyd/
+
+
+# Distribution/ Packaging / dist 
+dist/
+*.egg-info/
+
+# Enviroment variables
+.env 
+
+# OS noise 
+.DS_Store
