@@ -19,3 +19,22 @@ class HyperParams(BaseSettings):
     beta: float = Field(default=1, ge=0.1, le=10.0)
     gamma: float = Field(default=1, ge=0.0, le=1.0)
     lookback_window: int = Field(default=24, ge=1, le=72)
+
+
+class MembershipCsvFiles(BaseSettings):
+    """
+    This class is a configuration class that contains the paths to the CSV files required to make the memberhsip functions.
+    """
+    data_path_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=True
+    )
+
+    path_to_hr_mf: str = "../../../data/heart_rate_membership_functions.csv"
+    path_to_sbp: str = "../../../data/systolic_blood_pressure_membership_functions.csv"
+    path_to_rr: str = "../../../data/respiratory_rate_membership_functions.csv"
+    path_to_temp: str = "../../../data/temperature_membership_functions.csv"
+    path_to_fio2: str = "../../../data/inspired_oxygen_concentration_membership_functions.csv"
+    path_to_sp02: str = "../../../data/oxygen_saturation_membership_functions.csv"
+
