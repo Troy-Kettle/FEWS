@@ -1,4 +1,3 @@
-# from engine._fuzzy_core import FuzzyEngine
+from .fuzzifier import fuzzifier
 
-__version__ = "1.0.0"
-__all__ = ["FuzzyEngine"]
+__all__ = ["fuzzifier"]
