@@ -1,5 +1,13 @@
 """
 This module defines the membership functions based on the CSV files provided.
+
+Provides utilities to genereate the MF look up tables from the CSV files and derive the degree of memberships.
+
+Typical usage::
+
+mf = VitalMembershipFunctions(read_csv())
+mf.degree_of_membership('hr', 90)
+
 """
 
 from pathlib import Path
@@ -8,6 +16,10 @@ import csv
 
 
 class VitalMembershipFunctions:
+    """
+    Holds the membership functions from read_csv and returns the degree of membership as a dict per fuzzy set for the specified vital sign.
+    The input to this class is the lookup table dict generated from the read_csv() function.
+    """
     def __init__(self, lookup_table: dict[str, dict[str, dict[float, float]]]) -> None:
         self.lookup_table = lookup_table
 
@@ -26,6 +38,9 @@ class VitalMembershipFunctions:
 
 
 def load_membership_functions() -> dict: 
+    """
+    Creates a dict of dict of dict that holds all membership functions based on the provided CSV files.
+    """
 
     config = MembershipCsvFiles()
 
@@ -67,7 +82,3 @@ def load_membership_functions() -> dict:
     
 
     return all_vital_lookup
-
-mf = VitalMembershipFunctions(load_membership_functions())
-
-print(mf.degree_of_membership('hr', 90))
