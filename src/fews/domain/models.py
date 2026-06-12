@@ -24,9 +24,4 @@ class ObservationMatrix(BaseModel):
     patient_id: int
     obs: list[Observation] = Field(min_length=1)
 
-    @computed_field
-    @property
-    def num_of_observations(self) -> int:
-        return len(self.obs)
-
-
+    
