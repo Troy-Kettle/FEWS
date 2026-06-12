@@ -45,6 +45,5 @@ def main():
             print(f"Concern Score [0, 18] = {defuzzified}")
             
 
-
-
-
+if __name__ == "__main__":
+    main()

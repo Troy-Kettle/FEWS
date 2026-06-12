@@ -7,7 +7,7 @@ def fuzzifier(observation: Observation, membership_function: VitalMembershipFunc
 
     result = {}
 
-    for key, value in observation.model_dump().items():
+    for key, value in observation.model_dump(exclude={"time_of_obs"}).items():
         result[key] = membership_function.degree_of_membership(key, value)
 
 

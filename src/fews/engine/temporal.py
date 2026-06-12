@@ -1,7 +1,7 @@
 from fews.domain import ObservationMatrix, Observation, VitalMembershipFunctions
 from fews.config import HyperParams
 from fews.engine import fuzzifier
-from fews.engine.defuzzifier import _vital_score, _fuzzify_outputs
+from fews.engine.defuzzifier import _fuzzify_outputs, _map_to_concern_levels, _apply_threshold
 
 import statsmodels.api as sm
 from datetime import timedelta
@@ -30,7 +30,7 @@ def fuzzify_filtered(obs_matrix_filtered: list[Observation], membership_function
 
 def score_filtered(fuzzified_filtered: list[dict[str, dict[str, float]]]) -> list[dict[str, float]]:
     return [
-        {vital: _fuzzify_outputs(_vital_score(vital, memberships)) 
+        {vital: _fuzzify_outputs(_apply_threshold(_map_to_concern_levels(memberships)))
          for vital, memberships in obs.items()}
         for obs in fuzzified_filtered
     ]

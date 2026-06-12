@@ -25,7 +25,7 @@ def get_root_dir():
 ROOT_DIR = get_root_dir()
 path_suffix = [Path('data/heart_rate_membership_functions.csv'), Path('data/systolic_blood_pressure_membership_functions.csv'),
                 Path('data/respiratory_rate_membership_functions.csv'), Path('data/temperature_membership_functions.csv'),
-                Path('data/inspired_oxygen_concentration_membership_functions.csv'), Path('data/supplementary_oxygen_lmin_membership_functions.csv')]
+                Path('data/inspired_oxygen_concentration_membership_functions.csv'), Path('data/oxygen_saturation_membership_functions.csv')]
 default_paths = [Path(ROOT_DIR) / path for path in path_suffix]
 
 
@@ -44,5 +44,5 @@ class MembershipCsvFiles(BaseSettings):
     sbp: FilePath = Field(default= default_paths[1])
     rr: FilePath = Field(default= default_paths[2])
     temp: FilePath = Field(default= default_paths[3])
-    fio2: FilePath = Field(default= default_paths[4])
     spo2: FilePath = Field(default= default_paths[5])
+    fio2: FilePath = Field(default= default_paths[4])

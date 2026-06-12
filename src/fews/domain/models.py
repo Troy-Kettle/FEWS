@@ -8,7 +8,7 @@ class Observation(BaseModel):
     sbp: float = Field(ge=20, le=240, description='mmHg')
     rr: float = Field(ge=10, le=55, description='Breaths per min')
     temp: float = Field(ge=30, le=44, description='Degrees C')
-    sp02: float = Field(ge=70, le=100, description='%')
+    spo2: float = Field(ge=70, le=100, description='%')
     fio2: float = Field(ge=20, le=90, description='Fraction of inspired oxygen (%)')
     time_of_obs:  datetime = Field(default_factory= datetime.now, description="Time of observation")
 
