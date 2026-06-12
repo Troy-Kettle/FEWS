@@ -30,9 +30,6 @@ class VitalMembershipFunctions:
         return result
 
 
-type MembershipFunctions = dict[str, VitalMembershipFunctions]
-
-
 def load_membership_functions(csv_files: MembershipCsvFiles) -> VitalMembershipFunctions:
     """
     Creates a dict of dict of dict that holds all membership functions based on the provided CSV files.
