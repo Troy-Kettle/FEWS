@@ -42,8 +42,8 @@ def load_membership_functions(csv_files: MembershipCsvFiles) -> VitalMembershipF
         "sbp": csv_files.sbp,
         "rr": csv_files.rr,
         "temp": csv_files.temp,
-        "sp02": csv_files.spo2,
-        "fi02": csv_files.fio2,
+        "spo2": csv_files.spo2,
+        "fio2": csv_files.fio2,
     }
 
     def read_csv(path: Path) -> dict:
